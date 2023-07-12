@@ -1,0 +1,93 @@
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: #301212;
+}
+
+.header {
+    display: grid;
+    grid-template-rows: 100px 1fr;
+}
+
+.branding {
+    display: flex;
+}
+
+.tabs {
+    display: flex;
+}
+
+.tab {
+    height: 75px;
+    width: 250px;
+    text-align: center;
+    font-family: 'Hachi Maru Pop', cursive;
+    font-size: 1.5rem;
+    color: #aaa;
+    flex: 1;
+}
+
+.tab:hover {
+    font-size: 1.65rem;
+}
+
+.selected , .tab:hover{
+    border-radius: 15px;
+    color: white;
+}
+
+.svg-img {
+    color: white;
+    height: 70px;
+    transform: rotate(30deg);
+}
+
+.res-name {
+    font-size: 40px;
+    font-family: "Rock Salt", cursive;
+    color: white;
+}
+
+#content {
+    padding: 20px 200px;
+}
+
+.welcome {
+    padding: 20px;
+    background-color: beige;
+}
+
+.welcome h1, .welcome p {
+    font-family: "Rock Salt", cursive;
+    text-align: center;
+    color: black;
+}
+
+.welcome h1{
+    margin-bottom: 20px;
+}
+
+.welcome p {
+    font-size: 20px;
+    line-height: 2.25rem;
+}
+
+.welcome .sub {
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 1rem;
+}
+
+.welcome hr {
+    border: 2px dotted #301212;
+    margin: 10px;
+}

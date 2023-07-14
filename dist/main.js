@@ -10,23 +10,13 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/contact.js":
-/*!************************!*\
-  !*** ./src/contact.js ***!
-  \************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction populate() {\n    const container = document.getElementById(\"content\");\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({populate});\n\n//# sourceURL=webpack://restaurants/./src/contact.js?");
-
-/***/ }),
-
 /***/ "./src/home.js":
 /*!*********************!*\
   !*** ./src/home.js ***!
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction populate() {\n    const container = document.getElementById(\"content\");\n        container.innerHTML = '<div class=\"welcome\"><h1>Welcome</h1><p>The people at Pizza Shah welcome you to not only just a great meal, but also a great experience. We cater to the most prestigious of customers and serve the best pizza in town. But you don\\'t have to take our word for it, come on up and find out !</p><hr><p class=\"sub\">For more information, please visit the contact tab on top. <br>To look at our menu and the variety of choices we offer, you have the menu tab.</p></div>'\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({populate});\n\n//# sourceURL=webpack://restaurants/./src/home.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction populate() {\n    const container = document.getElementById(\"content\");\n    container.classList.add(\"home\");\n    container.innerHTML = '<div class=\"welcome\"><h1>Welcome</h1><p>The people at Pizza Shah welcome you to not only just a great meal, but also a great experience. We cater to the most prestigious of customers and serve the best pizza in town. But you don\\'t have to take our word for it, come on up and find out !</p><hr><p class=\"sub\">For more information, please visit the contact tab on top. <br>To look at our menu and the variety of choices we offer, you have the menu tab.</p></div>'\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({populate});\n\n//# sourceURL=webpack://restaurants/./src/home.js?");
 
 /***/ }),
 
@@ -36,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home */ \"./src/home.js\");\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu */ \"./src/menu.js\");\n/* harmony import */ var _contact__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./contact */ \"./src/contact.js\");\n\n\n\n\nfunction clearContent() {\n    const container = document.getElementById(\"content\");\n    container.innerHTML = \"\";\n}\n\n_home__WEBPACK_IMPORTED_MODULE_0__[\"default\"].populate();\n\n//# sourceURL=webpack://restaurants/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home */ \"./src/home.js\");\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu */ \"./src/menu.js\");\n\n\n\nconst tabs = document.querySelectorAll(\".tab\");\ntabs.forEach(tab => tab.addEventListener(\"click\", openTab));\n\nfunction clearContent() {\n    const container = document.getElementById(\"content\");\n    container.innerHTML = \"\";\n    container.classList.remove(\"home\");\n    container.classList.remove(\"menu\");\n\n    tabs.forEach(tab => tab.classList.remove(\"selected\"));\n}\n\nfunction openTab() {\n    let id = this.id;\n    clearContent();\n    this.classList.add(\"selected\");\n\n    if (id === \"home\") _home__WEBPACK_IMPORTED_MODULE_0__[\"default\"].populate();\n    if (id === \"menu\") _menu__WEBPACK_IMPORTED_MODULE_1__[\"default\"].populate();\n}\n\n_home__WEBPACK_IMPORTED_MODULE_0__[\"default\"].populate();\n\n//# sourceURL=webpack://restaurants/./src/index.js?");
 
 /***/ }),
 
@@ -46,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _hom
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction populate() {\n    const container = document.getElementById(\"content\");\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({populate});\n\n//# sourceURL=webpack://restaurants/./src/menu.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst menuItems = [];\nconst titles = [\"Pepperoni\", \"Tikka\", \"Fajita\", \"B-B-Q\", \"Cheese Lover\", \"Veggie\"];\nconst prices = [1000, 1100, 1100, 1200, 1000, 900];\nconst descriptions = [\n    \"Layered with our special pizza sauce and topped with cheese and pepperonis, this pizza is a go-to for those looking for a snack or those seeking consistency.\",\n    \"Adding a desi touch to pizza, the chicken is marinated in tikka masala and cooked over the grill till perfection. It's a must try.\",\n    \"Who doesn't love some extra veggies along with grilled chicken on their pizza. For those that prefer a little more crunch to their bites.\",\n    \"The BBQ pizza is our specialty, with pieces of chicken roasted on top of blazing hot coal, you'll be sure to feel the taste of cooked perfection in your mouth.\",\n    \"Some folks out there don't consider it a pizza without the cheese dripping down each slice. Well, look no further...with double the cheese, you won't be disappointed.\",\n    \"The name suggests what's inside, this pizza is a simple one, topped with vegetables and cheese.<br> *No chicken included\"];\n\nclass Item {\n    constructor(title, description, price) {\n        this.title = title;\n        this.description = description;\n        this.price = price;\n    }\n}\n\nfunction populate() {\n    const container = document.getElementById(\"content\");\n    container.classList.add(\"menu\")\n\n    for (let i = 0; i < 6; i++) {\n        let menuItem = document.createElement(\"div\");\n        menuItem.classList.add(\"item\");\n        \n        let title = document.createElement(\"p\");\n        title.classList.add(\"title\");\n        title.textContent = titles[i];\n        menuItem.appendChild(title);\n\n        let desc = document.createElement(\"p\");\n        desc.classList.add(\"desc\");\n        desc.innerHTML = descriptions[i];\n        menuItem.appendChild(desc);\n\n        let price = document.createElement(\"p\");\n        price.classList.add(\"price\");\n        price.textContent = `Rs. ${prices[i]}`;\n        menuItem.appendChild(price);\n\n        container.appendChild(menuItem);\n    }\n\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({populate});\n\n//# sourceURL=webpack://restaurants/./src/menu.js?");
 
 /***/ })
 

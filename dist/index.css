@@ -6,6 +6,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 
 body {
@@ -56,13 +57,57 @@ body {
     color: white;
 }
 
-#content {
-    padding: 20px 200px;
+#content.home {
+    padding: 20px 15%;
+}
+
+#content.menu {
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 250px;
+    gap: 30px;
+}
+
+.item {
+    height: 100%;
+    width: 100%;
+    background-color: beige;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 3px solid black;
+    box-shadow: 0px 3px 10px white;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.desc {
+    padding: 0 20px;
+    font-size: 1.25rem;
+    line-height: 1.35rem;
+    font-style: oblique;
+    height: 70%;
+}
+
+.price {
+    text-align: right;
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
 .welcome {
     padding: 20px;
     background-color: beige;
+    border: 3px solid black;
+    box-shadow: 0px 3px 10px white;
 }
 
 .welcome h1, .welcome p {
